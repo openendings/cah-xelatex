@@ -11,7 +11,7 @@
 \ProcessOptions
 
 \RequirePackage{fontspec}
-\RequirePackage{color}
+\RequirePackage{xcolor}
 \RequirePackage[top=1cm,left=0.68cm,right=0.68cm]{geometry}
 
 % Default font should be Helvetica or equivalent.
@@ -19,8 +19,6 @@
 \renewcommand{\familydefault}{\sfdefault}
 \renewcommand{\seriesdefault}{\bfdefault}
 
-\renewcommand{\normalsize}{\fontsize{14.8pt}{17.5pt}\selectfont}
-\newcommand{\attributionsize}{\fontsize{5pt}{7pt}\selectfont}
 \setlength{\textwidth}{6.5in}
 \setlength{\textheight}{8in}
 
@@ -37,12 +35,12 @@
 \setlength{\cardtoppadding}{0.45cm}
 \setlength{\cardbottompadding}{0.45cm}
 
-\newcommand\whitecard[1]{\genericcard{#1}{white}{black}}
-\newcommand\blackcard[1]{\genericcard{#1}{black}{white}}
+\newcommand\answercard[1]{\genericcard{#1}{white}{black}}
+\newcommand\questioncard[1]{\genericcard{#1}{black}{white}}
 
 \newcommand\genericcard[3]{%
 \setlength{\fboxsep}{0cm}%
-\fbox{\colorbox{#2}{
+\fcolorbox{#3}{#2}{
 \hspace{\cardhorzpadding}%
 \begin{minipage}[t][\cardheight][t]{\dimexpr\cardwidth-2\fboxsep-2\fboxrule-2\cardhorzpadding\relax}%
 \begin{flushleft}%
@@ -53,11 +51,18 @@
 {\attributionsize \attributiontext}%
 \vspace{\cardtoppadding}%
 \end{flushleft}%
-\end{minipage}\hspace{\cardhorzpadding}}}%
+\end{minipage}\hspace{\cardhorzpadding}}%
 \hspace{0pt}%
 }
 
 % ATTRIBUTION
 \newcommand\attributiontext{Cards Against Humanity}
+
+% Helper macros
+\newcommand\blank[1][3.5em]{\underline{\hspace{#1}}}
+\renewcommand{\normalsize}{\fontsize{14.8pt}{17.5pt}\selectfont}
+\newcommand{\small}{\fontsize{13.7pt}{16.2pt}\selectfont}
+\newcommand{\smaller}{\fontsize{9.6pt}{11.3pt}\selectfont}
+\newcommand{\attributionsize}{\fontsize{5pt}{7pt}\selectfont}
 
 \pagestyle{empty}
