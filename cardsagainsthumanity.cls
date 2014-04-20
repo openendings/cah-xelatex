@@ -19,6 +19,7 @@
 \renewcommand{\seriesdefault}{\bfdefault}
 
 \renewcommand{\normalsize}{\fontsize{14.8pt}{17.5pt}\selectfont}
+\newcommand{\attributionsize}{\fontsize{5pt}{7pt}\selectfont}
 \setlength{\textwidth}{6.5in}
 \setlength{\textheight}{8in}
 
@@ -28,10 +29,12 @@
 \newlength\cardwidth
 \newlength\cardhorzpadding
 \newlength\cardtoppadding
+\newlength\cardbottompadding
 \setlength{\cardwidth}{4.91cm}
 \setlength{\cardheight}{5cm}
 \setlength{\cardhorzpadding}{0.25cm}
 \setlength{\cardtoppadding}{0.45cm}
+\setlength{\cardbottompadding}{0.45cm}
 
 \newcommand\whitecard[1]{%
 \setlength{\fboxsep}{0cm}%
@@ -41,8 +44,14 @@
 \begin{flushleft}%
 \vspace{\cardtoppadding}%
 \noindent #1
+\vfill%
+{\attributionsize \attributiontext}%
+\vspace{\cardtoppadding}%
 \end{flushleft}%
 \end{minipage}\hspace{\cardhorzpadding}}\hspace{0pt}%
 }
+
+% ATTRIBUTION
+\newcommand\attributiontext{Cards Against Humanity}
 
 \pagestyle{empty}
