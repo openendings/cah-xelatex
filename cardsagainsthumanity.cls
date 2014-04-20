@@ -11,6 +11,7 @@
 \ProcessOptions
 
 \RequirePackage{fontspec}
+\RequirePackage{color}
 \RequirePackage[top=1cm,left=0.68cm,right=0.68cm]{geometry}
 
 % Default font should be Helvetica or equivalent.
@@ -36,19 +37,24 @@
 \setlength{\cardtoppadding}{0.45cm}
 \setlength{\cardbottompadding}{0.45cm}
 
-\newcommand\whitecard[1]{%
+\newcommand\whitecard[1]{\genericcard{#1}{white}{black}}
+\newcommand\blackcard[1]{\genericcard{#1}{black}{white}}
+
+\newcommand\genericcard[3]{%
 \setlength{\fboxsep}{0cm}%
-\fbox{
+\fbox{\colorbox{#2}{
 \hspace{\cardhorzpadding}%
 \begin{minipage}[t][\cardheight][t]{\dimexpr\cardwidth-2\fboxsep-2\fboxrule-2\cardhorzpadding\relax}%
 \begin{flushleft}%
 \vspace{\cardtoppadding}%
+\color{#3}%
 \noindent #1
 \vfill%
 {\attributionsize \attributiontext}%
 \vspace{\cardtoppadding}%
 \end{flushleft}%
-\end{minipage}\hspace{\cardhorzpadding}}\hspace{0pt}%
+\end{minipage}\hspace{\cardhorzpadding}}}%
+\hspace{0pt}%
 }
 
 % ATTRIBUTION
