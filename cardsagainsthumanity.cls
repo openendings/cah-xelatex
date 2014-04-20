@@ -12,7 +12,7 @@
 
 \RequirePackage{fontspec}
 \RequirePackage{xcolor}
-\RequirePackage[top=1cm,left=0.68cm,right=0.68cm]{geometry}
+\RequirePackage[top=1cm,left=0.68cm,right=0.68cm,bottom=1cm]{geometry}
 
 % Default font should be Helvetica or equivalent.
 \setsansfont{Helvetica CE 55 Roman}
@@ -20,7 +20,7 @@
 \renewcommand{\seriesdefault}{\bfdefault}
 
 \setlength{\textwidth}{6.5in}
-\setlength{\textheight}{8in}
+\setlength{\textheight}{\dimexpr\paperheight-2cm\relax}
 
 \setlength{\parindent}{0cm}
 
@@ -62,7 +62,8 @@
 \newcommand\blank[1][3.5em]{\underline{\hspace{#1}}}
 \renewcommand{\normalsize}{\fontsize{14.8pt}{17.5pt}\selectfont}
 \newcommand{\small}{\fontsize{13.7pt}{16.2pt}\selectfont}
-\newcommand{\smaller}{\fontsize{9.6pt}{11.3pt}\selectfont}
+\newcommand{\smaller}{\fontsize{11.6pt}{13.8pt}\selectfont}
+\newcommand{\smallest}{\fontsize{9.6pt}{11.3pt}\selectfont}
 \newcommand{\attributionsize}{\fontsize{5pt}{7pt}\selectfont}
 
 \pagestyle{empty}
