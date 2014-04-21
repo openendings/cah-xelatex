@@ -15,7 +15,7 @@
 \RequirePackage[top=1cm,left=0.68cm,right=0.68cm,bottom=1cm]{geometry}
 
 % Default font should be Helvetica or equivalent.
-\setsansfont{Helvetica CE 55 Roman}
+\setsansfont[Mapping=tex-text]{Helvetica CE 55 Roman}
 \renewcommand{\familydefault}{\sfdefault}
 \renewcommand{\seriesdefault}{\bfdefault}
 
