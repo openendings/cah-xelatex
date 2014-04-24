@@ -67,8 +67,6 @@
 \newcommand{\smallD}{\fontsize{10.6pt}{12.5pt}\selectfont}
 \newcommand{\smallE}{\fontsize{9.6pt}{11.3pt}\selectfont}
 \newcommand{\small}{\smallA}
-\newcommand{\smaller}{\smallC}
-\newcommand{\smallest}{\smallE}
 \newcommand{\attributionsize}{\fontsize{5pt}{7pt}\selectfont}
 
 \pagestyle{empty}
