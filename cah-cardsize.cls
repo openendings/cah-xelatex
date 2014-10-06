@@ -4,8 +4,8 @@
 \ProvidesClass{cardsagainsthumanity}[2014/04/20 Cards Against Humanity class]
 
 \DeclareOption{pokercard}
-   {\setlength\paperheight {3in}%
-    \setlength\paperwidth  {2in}}
+   {\setlength\paperheight {88mm}%
+    \setlength\paperwidth  {63mm}}
 \ExecuteOptions{pokercard}
 \ProcessOptions
 
@@ -25,11 +25,11 @@
 \newlength\cardhorzpadding
 \newlength\cardtoppadding
 \newlength\cardbottompadding
-\setlength{\cardwidth}{2in}
-\setlength{\cardheight}{3in}
-\setlength{\cardhorzpadding}{0.35cm}
-\setlength{\cardtoppadding}{0.45cm}
-\setlength{\cardbottompadding}{0.45cm}
+\setlength{\cardwidth}{63mm}
+\setlength{\cardheight}{88mm}
+\setlength{\cardhorzpadding}{9mm}
+\setlength{\cardtoppadding}{10mm}
+\setlength{\cardbottompadding}{10mm}
 
 \newcommand\answercard[1]{\genericcard{#1}{white}{black}}
 \newcommand\questioncard[1]{\genericcard{#1}{black}{white}}

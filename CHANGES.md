@@ -1,6 +1,9 @@
 Changes
 =======
 
+  * v1.1.1
+    * Fixed margins to better reflect actual card sizes.
+    * 2"x3" -> 63mmx88mm.
   * v1.1.0
     * Rename 'cardsagainsthumanity' documentclass to 'cah-squares' (preserving backwards compatibility).
     * Create 'cah-cardsize' class for producing 2"x3" cards (poker size).
