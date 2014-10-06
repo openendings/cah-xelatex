@@ -1,7 +1,7 @@
-% Class for printing CAH cards in 2"x2" square format (matching the official printed PDFs).
+% Class for printing CAH cards in 63mmx88mm format (like the actual cards).
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{cardsagainsthumanity}[2014/04/20 Cards Against Humanity class]
+\ProvidesClass{cah-cardsize}[2014/04/20 Cards Against Humanity class]
 
 \DeclareOption{pokercard}
    {\setlength\paperheight {88mm}%
@@ -58,12 +58,12 @@
 
 % Helper macros
 \newcommand\blank[1][3.5em]{\underline{\hspace{#1}}}
-\renewcommand{\normalsize}{\fontsize{14.8pt}{17.5pt}\selectfont}
-\newcommand{\smallA}{\fontsize{13.7pt}{16.2pt}\selectfont}
-\newcommand{\smallB}{\fontsize{12.6pt}{15.0pt}\selectfont}
-\newcommand{\smallC}{\fontsize{11.6pt}{13.8pt}\selectfont}
-\newcommand{\smallD}{\fontsize{10.6pt}{12.5pt}\selectfont}
-\newcommand{\smallE}{\fontsize{9.6pt}{11.3pt}\selectfont}
+\renewcommand{\normalsize}{\fontsize{16pt}{18.9pt}\selectfont}
+\newcommand{\smallA}{\fontsize{14.8pt}{17.5pt}\selectfont}
+\newcommand{\smallB}{\fontsize{13.7pt}{16.2pt}\selectfont}
+\newcommand{\smallC}{\fontsize{12.6pt}{15.0pt}\selectfont}
+\newcommand{\smallD}{\fontsize{11.6pt}{13.8pt}\selectfont}
+\newcommand{\smallE}{\fontsize{10.6pt}{12.5pt}\selectfont}
 \newcommand{\small}{\smallA}
 \newcommand{\attributionsize}{\fontsize{5pt}{7pt}\selectfont}
 

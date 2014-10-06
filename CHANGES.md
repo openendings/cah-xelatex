@@ -1,6 +1,8 @@
 Changes
 =======
 
+  * v1.1.2
+    * Tweaked \small commands; updated examples for properly sized cards.
   * v1.1.1
     * Fixed margins to better reflect actual card sizes.
     * 2"x3" -> 63mmx88mm.
