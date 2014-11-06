@@ -22,13 +22,15 @@
 
 \newlength\cardheight
 \newlength\cardwidth
-\newlength\cardhorzpadding
+\newlength\cardleftpadding
+\newlength\cardrightpadding
 \newlength\cardtoppadding
 \newlength\cardbottompadding
 \setlength{\cardwidth}{63mm}
 \setlength{\cardheight}{88mm}
-\setlength{\cardhorzpadding}{9mm}
-\setlength{\cardtoppadding}{10mm}
+\setlength{\cardleftpadding}{6mm}
+\setlength{\cardrightpadding}{8mm}
+\setlength{\cardtoppadding}{6mm}
 \setlength{\cardbottompadding}{10mm}
 
 \newcommand\answercard[1]{\genericcard{#1}{white}{black}}
@@ -40,8 +42,8 @@
 \setlength{\fboxsep}{0cm}%
 \newpage%
 \colorbox{#2}{%
-\hspace{\cardhorzpadding}%
-\begin{minipage}[t][\cardheight][t]{\dimexpr\cardwidth-2\cardhorzpadding\relax}%
+\hspace{\cardleftpadding}%
+\begin{minipage}[t][\cardheight][t]{\dimexpr\cardwidth-\cardleftpadding-\cardrightpadding\relax}%
 \begin{flushleft}%
 \vspace{\cardtoppadding}%
 \color{#3}%
@@ -50,7 +52,7 @@
 {\attributionsize \attributiontext}%
 \vspace{\cardtoppadding}%
 \end{flushleft}%
-\end{minipage}\hspace{\cardhorzpadding}}%
+\end{minipage}\hspace{\cardrightpadding}}%
 }
 
 % ATTRIBUTION
@@ -58,7 +60,7 @@
 
 % Helper macros
 \newcommand\blank[1][3.5em]{\underline{\hspace{#1}}}
-\renewcommand{\normalsize}{\fontsize{16pt}{18.9pt}\selectfont}
+\renewcommand{\normalsize}{\fontsize{15pt}{20pt}\selectfont}
 \newcommand{\smallA}{\fontsize{14.8pt}{17.5pt}\selectfont}
 \newcommand{\smallB}{\fontsize{13.7pt}{16.2pt}\selectfont}
 \newcommand{\smallC}{\fontsize{12.6pt}{15.0pt}\selectfont}
