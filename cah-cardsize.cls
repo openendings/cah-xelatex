@@ -61,7 +61,7 @@
 % Helper macros
 \newcommand\blank[1][3.5em]{\underline{\hspace{#1}}}
 \renewcommand{\normalsize}{\fontsize{15pt}{20pt}\selectfont}
-\newcommand{\smallA}{\fontsize{14.8pt}{17.5pt}\selectfont}
+\newcommand{\smallA}{\fontsize{14.4pt}{19.2pt}\selectfont}
 \newcommand{\smallB}{\fontsize{13.7pt}{16.2pt}\selectfont}
 \newcommand{\smallC}{\fontsize{12.6pt}{15.0pt}\selectfont}
 \newcommand{\smallD}{\fontsize{11.6pt}{13.8pt}\selectfont}
