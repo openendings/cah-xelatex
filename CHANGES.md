@@ -1,6 +1,8 @@
 Changes
 =======
 
+  * v1.2.0
+    * Icons and 'pick TWO' for poker size.
   * v1.1.2
     * Tweaked \small commands; updated examples for properly sized cards.
   * v1.1.1
