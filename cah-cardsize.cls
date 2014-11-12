@@ -10,6 +10,7 @@
 \ProcessOptions
 
 \RequirePackage{fontspec}
+\RequirePackage{tikz}
 \RequirePackage{xcolor}
 \RequirePackage[top=-1em,left=0cm,right=0cm,bottom=0cm]{geometry}
 
@@ -31,7 +32,7 @@
 \setlength{\cardwidth}{63mm}
 \setlength{\cardheight}{88mm}
 \setlength{\cardleftpadding}{6mm}
-\setlength{\cardrightpadding}{8mm}
+\setlength{\cardrightpadding}{7.6mm}
 \setlength{\cardtoppadding}{6mm}
 \setlength{\cardbottompadding}{9mm}
 \setlength{\cardiconoffset}{2mm}
@@ -40,9 +41,12 @@
 \newcommand\answercard[1]{\def\isWhite{1}\genericcard{#1}{white}{black}}
 \newcommand\questioncard[1]{\def\isWhite{0}\genericcard{#1}{black}{white}}
 
+\newcommand\pickTwo{\def\isPickTwo{1}}
+
 \setlength{\topsep}{0cm}
 
 \newcommand\genericcard[3]{%
+\def\isPickTwo{0}%
 \setlength{\fboxsep}{0cm}%
 \newpage%
 \colorbox{#2}{%
@@ -57,7 +61,12 @@
 \if\imageEnabled1
   \raisebox{-\cardiconoffset}{\includegraphics[width=\cardiconwidth]{\attributionimage}}
 \fi
-\attributionsize \attributiontext}%
+\attributionsize \attributiontext%
+\if\isPickTwo1
+\hspace*{\fill} \picktwosize PICK \raisebox{\dimexpr- 1.4mm \relax}{\begin{tikzpicture}
+		\draw[fill=white] (0,0) circle [radius=2.5mm] node {\picktwosizeB\color{black}2};
+\end{tikzpicture}}%
+\fi}%
 \vspace{\dimexpr\cardbottompadding-\cardiconoffset\relax}%
 \end{flushleft}%
 \end{minipage}\hspace{\cardrightpadding}}%
@@ -74,11 +83,9 @@
 \newcommand\blank[1][3.5em]{\underline{\hspace{#1}}}
 \renewcommand{\normalsize}{\fontsize{15pt}{20pt}\selectfont}
 \newcommand{\smallA}{\fontsize{14.4pt}{19.2pt}\selectfont}
-\newcommand{\smallB}{\fontsize{13.7pt}{16.2pt}\selectfont}
-\newcommand{\smallC}{\fontsize{12.6pt}{15.0pt}\selectfont}
-\newcommand{\smallD}{\fontsize{11.6pt}{13.8pt}\selectfont}
-\newcommand{\smallE}{\fontsize{10.6pt}{12.5pt}\selectfont}
 \newcommand{\small}{\smallA}
 \newcommand{\attributionsize}{\fontsize{5pt}{7pt}\selectfont}
+\newcommand{\picktwosize}{\fontsize{10pt}{15pt}\selectfont}
+\newcommand{\picktwosizeB}{\fontsize{13pt}{15pt}\selectfont}
 
 \pagestyle{empty}
