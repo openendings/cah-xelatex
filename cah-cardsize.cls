@@ -3,11 +3,23 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{cah-cardsize}[2014/04/20 Cards Against Humanity class]
 
+\newlength\bleedsize
+
+\newlength\cardheight
+\newlength\cardwidth
 \DeclareOption{pokercard}
-   {\setlength\paperheight {88mm}%
-    \setlength\paperwidth  {63mm}}
+   {\setlength\cardheight {3.5in}
+    \setlength\cardwidth  {2.5in}
+    \setlength\bleedsize{0in}}
+\DeclareOption{pokercardWithBleed}
+   {\setlength\cardheight {3.5in}
+    \setlength\cardwidth  {2.5in}
+    \setlength\bleedsize   {0.12in}}
 \ExecuteOptions{pokercard}
 \ProcessOptions
+
+\setlength\paperwidth{\dimexpr\cardwidth+2\bleedsize\relax}
+\setlength\paperheight{\dimexpr\cardheight+2\bleedsize\relax}
 
 \RequirePackage{fontspec}
 \RequirePackage{tikz}
@@ -21,20 +33,16 @@
 
 \setlength{\parindent}{0cm}
 
-\newlength\cardheight
-\newlength\cardwidth
 \newlength\cardleftpadding
 \newlength\cardrightpadding
 \newlength\cardtoppadding
 \newlength\cardbottompadding
 \newlength\cardiconoffset
 \newlength\cardiconwidth
-\setlength{\cardwidth}{63mm}
-\setlength{\cardheight}{88mm}
-\setlength{\cardleftpadding}{6mm}
-\setlength{\cardrightpadding}{7.6mm}
-\setlength{\cardtoppadding}{6mm}
-\setlength{\cardbottompadding}{9mm}
+\setlength{\cardleftpadding}{\dimexpr 6mm+\bleedsize\relax}
+\setlength{\cardrightpadding}{\dimexpr 7.6mm+\bleedsize\relax}
+\setlength{\cardtoppadding}{\dimexpr 6mm+\bleedsize\relax}
+\setlength{\cardbottompadding}{\dimexpr 9mm+\bleedsize\relax}
 \setlength{\cardiconoffset}{2mm}
 \setlength{\cardiconwidth}{7mm}
 
@@ -51,7 +59,7 @@
 \newpage%
 \colorbox{#2}{%
 \hspace{\cardleftpadding}%
-\begin{minipage}[t][\cardheight][t]{\dimexpr\cardwidth-\cardleftpadding-\cardrightpadding\relax}%
+\begin{minipage}[t][\paperheight][t]{\dimexpr\paperwidth-\cardleftpadding-\cardrightpadding\relax}%
 \begin{flushleft}%
 \vspace{\cardtoppadding}%
 \color{#3}%
