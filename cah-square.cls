@@ -64,7 +64,7 @@
   \raisebox{-\cardiconoffset}{\includegraphics[width=\cardiconwidth]{\attributionimage}}
 \fi
 \attributionsize
-\if\isPickTwo\attributiontextshort\else\attributiontextshort\fi%
+\if\isPickTwo1\attributiontextshort\else\attributiontext\fi%
 \if\isPickTwo1
 \hspace*{\fill} \picktwosize PICK \raisebox{\dimexpr- 1.4mm \relax}{\begin{tikzpicture}
 		\draw[fill=white] (0,0) circle [radius=2.5mm] node {\picktwosizeB\color{black}2};
