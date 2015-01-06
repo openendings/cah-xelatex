@@ -13,6 +13,7 @@
 \ProcessOptions
 
 \RequirePackage{fontspec}
+\RequirePackage{tikz}
 \RequirePackage{xcolor}
 \RequirePackage[top=1cm,left=0.68cm,right=0.68cm,bottom=1cm]{geometry}
 
@@ -31,16 +32,24 @@
 \newlength\cardhorzpadding
 \newlength\cardtoppadding
 \newlength\cardbottompadding
+\newlength\cardiconoffset
+\newlength\cardiconwidth
 \setlength{\cardwidth}{4.91cm}
-\setlength{\cardheight}{5cm}
+\setlength{\cardheight}{5.02cm}
 \setlength{\cardhorzpadding}{0.25cm}
 \setlength{\cardtoppadding}{0.45cm}
-\setlength{\cardbottompadding}{0.45cm}
+\setlength{\cardbottompadding}{0.5cm}
+\setlength{\cardiconoffset}{2mm}
+\setlength{\cardiconwidth}{7mm}
 
-\newcommand\answercard[1]{\genericcard{#1}{white}{black}}
-\newcommand\questioncard[1]{\genericcard{#1}{black}{white}}
+\newcommand\answercard[1]{\def\isWhite{1}\genericcard{#1}{white}{black}}
+\newcommand\questioncard[1]{\def\isWhite{0}\genericcard{#1}{black}{white}}
+
+
+\newcommand\pickTwo{\def\isPickTwo{1}}
 
 \newcommand\genericcard[3]{%
+\def\isPickTwo{0}%
 \setlength{\fboxsep}{0cm}%
 \fcolorbox{#3}{#2}{
 \hspace{\cardhorzpadding}%
@@ -50,15 +59,30 @@
 \color{#3}%
 \noindent #1
 \vfill%
-{\attributionsize \attributiontext}%
-\vspace{\cardtoppadding}%
+{%
+\if\imageEnabled1
+  \raisebox{-\cardiconoffset}{\includegraphics[width=\cardiconwidth]{\attributionimage}}
+\fi
+\attributionsize
+\if\isPickTwo\attributiontextshort\else\attributiontextshort\fi%
+\if\isPickTwo1
+\hspace*{\fill} \picktwosize PICK \raisebox{\dimexpr- 1.4mm \relax}{\begin{tikzpicture}
+		\draw[fill=white] (0,0) circle [radius=2.5mm] node {\picktwosizeB\color{black}2};
+\end{tikzpicture}}%
+\fi}%
+\vspace{\dimexpr\cardbottompadding-\cardiconoffset\relax}%
 \end{flushleft}%
 \end{minipage}\hspace{\cardhorzpadding}}%
 \hspace{0pt}%
 }
 
-% ATTRIBUTION
+% ATTRIBUTION; ICON
 \newcommand\attributiontext{Cards Against Humanity}
+\newcommand\attributiontextshort{CAH}
+\newcommand\attributionimage{\if\isWhite1\whitecardicon\else\blackcardicon\fi}
+\def\whitecardicon{res/cards_default}
+\def\blackcardicon{res/cards_default}
+\def\imageEnabled{1}
 
 % Helper macros
 \newcommand\blank[1][3.5em]{\underline{\hspace{#1}}}
@@ -70,5 +94,7 @@
 \newcommand{\smallE}{\fontsize{9.6pt}{11.3pt}\selectfont}
 \newcommand{\small}{\smallA}
 \newcommand{\attributionsize}{\fontsize{5pt}{7pt}\selectfont}
+\newcommand{\picktwosize}{\fontsize{10pt}{15pt}\selectfont}
+\newcommand{\picktwosizeB}{\fontsize{13pt}{15pt}\selectfont}
 
 \pagestyle{empty}
